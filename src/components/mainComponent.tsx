@@ -135,7 +135,7 @@ const MainComponent = () => {
         }
       >
         <Typography variant="h6" align="center" color="white" className="mt-4">
-          You selected {selectedCity}, {selectedState}, {selectedCountry}
+          You selected {selectedCountry}, {selectedState}, {selectedCity}
         </Typography>
       </Fade>
     </div>
