@@ -6,7 +6,6 @@ import {
   Select,
   SelectChangeEvent,
   Typography,
-  Fade,
 } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import axios from "axios";
@@ -61,9 +60,8 @@ const MainComponent = () => {
   }, [selectedState, selectedCountry]);
 
   return (
-    <div className="flex flex-col items-center m-4 gap-4">
-      {/* Dropdowns Row */}
-      <div className="flex flex-row justify-center gap-4">
+    <div>
+      <div className="flex flex-row justify-center gap-6 p-6 bg-gray-900">
         {/* Country Dropdown */}
         <div className="bg-white p-4 rounded shadow w-[300px]">
           <FormControl fullWidth>
@@ -127,17 +125,14 @@ const MainComponent = () => {
           </FormControl>
         </div>
       </div>
-
-      {/* Selected Location Display */}
-      <Fade
-        in={
-          selectedCountry !== "" && selectedState !== "" && selectedCity !== ""
-        }
-      >
-        <Typography variant="h6" align="center" color="white" className="mt-4">
-          You selected {selectedCountry}, {selectedState}, {selectedCity}
-        </Typography>
-      </Fade>
+      <div>
+        {/* Display Selection */}
+        {selectedCountry && selectedState && selectedCity && (
+          <Typography variant="h6" align="center" className="mt-4 text-white">
+            You selected {selectedCity}, {selectedState}, {selectedCountry}
+          </Typography>
+        )}
+      </div>
     </div>
   );
 };
